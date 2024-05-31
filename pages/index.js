@@ -10,9 +10,7 @@ import Login from "./admin/login";
 export default function Home() {
   return (
     <>
-      <Login />
-      {/* <h2>Bienvenue</h2>
-      <Link href="../../admin/login">Connectez-vous</Link> */}
+      <p>landing page</p>
     </>
   );
 }
