@@ -1,14 +1,19 @@
-import Layout from "./components/layout";
-// import NestedLayout from "../components/nested-layout";
-// import "../../styles/admin.module.css";
+// import Head from "next/head";
+// import Image from "next/image";
+// import { Inter } from "next/font/google";
+// import styles from "@/styles/Home.module.css";
+import Link from "next/link";
+import Login from "./login";
 
-const AdminDashboard = () => {
-  <Layout title={"Page admin"}>
-    <div className="flex h-full flex-col justify-center items-center">
-      <h1 className="text-4xl mb-5 font-bold">Home</h1>
-      <span className="text-7xl">🏡</span>
-    </div>
-  </Layout>;
-};
+// const inter = Inter({ subsets: ["latin"] });
 
-export default AdminDashboard;
+export default function Home() {
+  return (
+    <>
+      <h2>dashboard</h2>
+
+      {/* <h2>Bienvenue</h2>
+      <Link href="../../admin/login">Connectez-vous</Link> */}
+    </>
+  );
+}
