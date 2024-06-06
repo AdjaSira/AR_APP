@@ -6,7 +6,7 @@ import Button from '@/components/button';
 import Footer from '@/components/footer';
 import Memory from '@/components/memory';
 import { color } from 'three/examples/jsm/nodes/Nodes';
-import Color from '@/components/color';
+import ColorPicker from '@/components/color';
 
 
 export default function Home() {
@@ -90,17 +90,17 @@ export default function Home() {
       </div>
     </div>
 
-      <div className="flex flex-wrap mt-20 flex-col md:flex-row">
+      <div className="flex flex-wrap mt-20 flex-row md:flex-row">
         <div className=" w-full md:w-1/2 h-20 flex flex-col justify-center items-center">
           <Button/>
          </div>
 
-        <div className=" w-full md:w-1/2 h-60 flex flex-col justify-center items-center">
+        <div className="mb-10 w-full md:w-1/2 h-60 flex flex-row justify-between items-center">
           <div className="mb-40 ml-40 text-lg font-bold w-full md:w-1/2 flex flex-col justify-center items-center">
-          <Color/>
+          <ColorPicker/>
           </div>
 
-          <div className="ml-40 w-full md:w-1/2 flex flex-col justify-center items-center mt-4">
+          <div className="mb-40 w-full md:w-1/2 flex flex-col justify-center items-center ">
           <Memory/>
           </div>
         </div>
