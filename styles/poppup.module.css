@@ -1,0 +1,51 @@
+.poppup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poppup-inner{
+    position: relative;
+    padding: 52px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #fcf8f8;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.poppup-inner .close-btn{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: orange;
+   
+}
+.close-btn{
+    background-color: white;
+    
+    
+}
+.next{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 7px;
+    width: 100px;
+    background-color: orange;
+   
+}
+.titre{
+    color: orange;
+}
+
+.input {
+    border: 2px solid black;
+}

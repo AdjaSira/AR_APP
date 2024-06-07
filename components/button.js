@@ -1,9 +1,9 @@
 import styles from "../styles/button.module.css"
 
-export default function Button() {
+export default function Button({onClick}) {
     return (
         <>
-       <button className={styles.button}>Précommander</button>
+         <button onClick={onClick} className={styles.button}>Précommander</button> 
         </>
       );
 }
