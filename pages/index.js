@@ -18,6 +18,8 @@ export default function Home() {
     setPopuppVisible(!poppupVisible);
   };
 
+
+
  /* const containerRef = useRef();
   const [gltfScene, setGltfScene] = useState(null);
 
@@ -71,57 +73,48 @@ export default function Home() {
         <div className="">
           <Menue />
         </div>
-
-        <div className="">
-          {/* bouton */}
-        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 ml-10">
-      <div  className="bg-gray-500 h-96 flex justify-center items-center">
-        <div className="w-full md:w-1/2">
-          {/* Image ou modèle 3D */}
-        </div>
-      </div>
 
-      <div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
-        <div className="w-full md:w-3/4 md:mx-auto lg:ml-60">
-          <p className="text-lg font-bold mb-4 ">Description</p>
+      <div class="grid grid-flow-col grid-rows-2 md:grid-cols-4 gap-8">
+        <div className='md:col-span-3'>
+        <img  src='iPhone_15_Pro_Blue_Titanium_1_0.jpg'/> 
+        </div>
+       <div className="md:col-start-4">
+       <div className='text-lg font-bold  mt-20 mr-10'>
+       <p>Description</p>
+       <br/><br/>
+       </div>
           <div className="liste"> 
-            <ul className="flex flex-col">
+            <ul className="flex flex-col mr-10">
               <li className="mb-4"><h2 className='text-orange-500'>Matériaux Premium :</h2> L'iPhone 15 Pro est fabriqué avec un châssis en titane de qualité aéronautique, ce qui lui confère robustesse et légèreté.</li>
               <li className="mb-4"><h2 className='text-orange-500'>Couleurs: </h2>Disponible en plusieurs coloris élégants, incluant le noir sidéral, l'argent, l'or et un nouveau bleu profond.</li>
-              <li className="mb-4"><h2 className='text-orange-500' >Écran:</h2> Écran Super Retina XDR de 6,1 pouces (ou 6,7 pouces pour le modèle Pro Max) avec une résolution impressionnante et un taux de rafraîchissement ProMotion de 120 Hz, offrant une fluidité exceptionnelle.</li>
+              <li className="mb-4"><h2 className='text-orange-500'>Écran:</h2> Écran Super Retina XDR de 6,1 pouces (ou 6,7 pouces pour le modèle Pro Max) .</li>
             </ul>
-          </div>
         </div>
+        </div>
+      </div>
+
+    <div className="flex flex-wrap  flex-row ">
+      <div className="mt-[-300px] md:mt-0 ml-7   md:w-1/2 h-20 flex justify-center md:justify-start items-center">
+      
+          <Button onClick={togglePoppup} />
+          <Poppup trigger={poppupVisible} setTrigger={setPopuppVisible}>
+            <h2 className="titre  text-orange-500">Numéro de Téléphone :</h2>
+            <br/>
+            <input className="input border border-orange-300" type="text" placeholder="Entrez votre numéro..." /> 
+            <br/><br/>
+            <ColorPicker />
+            <br/><br/>
+            <Memory />
+            <br/><br/>
+            <button className="text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Suivant</button>
+          </Poppup>
       </div>
     </div>
+ 
 
-      <div className="flex flex-wrap mt-20 flex-row md:flex-row">
-        <div className=" w-full md:w-1/2 h-20 flex justify-center md:justify-start items-center">
-          <Button onClick={togglePoppup}/>
-          <Poppup trigger={poppupVisible} setTrigger={setPopuppVisible}>
-          <h2 className={style.titre}>Numéro de Téléphone :</h2>
-          <br/>
-          <input className={style.input} type="text" placeholder="Entrez votre numéro..." /> 
-          <br/>  <br/>
-          <button className={style.next}>Suivant</button>
-          </Poppup>
-         </div>
-
-        <div className=" md:mb-0 mb-4  w-full md:w-1/2 h-50  flex flex-row justify-between md:flex-row items-center">
-          <div className="mb-4 md:mb-0 md:ml-40 text-lg font-bold w-full md:w-1/2 flex flex-col justify-center items-center">
-          <ColorPicker/>
-          </div>
-
-          <div className=" w-full md:w-1/2 flex  justify-center items-center  ">
-          <Memory/>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-20 ">
+      <div >
       <Footer/>
       </div>
     </>

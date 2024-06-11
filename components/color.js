@@ -13,7 +13,8 @@ const ColorPicker = () => {
   return (
     <div>
       <div>
-        <h1>Choisir Couleur</h1>
+        <h1 className="text-orange-500">Choisir Couleur :</h1>
+        <br/><br/>
       </div>
       <div className="flex space-x-4">
       <button  onClick={() => handleColor("pink")}  className={`w-12 h-12  rounded-full bg-pink-500  text-white border-2 ${selectedColor === "pink" ? "focus:border-orange-500" : "border-transparent"}`}></button>
