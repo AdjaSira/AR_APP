@@ -76,7 +76,7 @@ export default function Home() {
       </div>
 
 
-      <div class="grid grid-flow-col grid-rows-2 md:grid-cols-4 gap-8">
+      <div class="grid grid-flow-col grid-rows-2 md:grid-cols-4 gap-8 max-h-[720px]">
         <div className='md:col-span-3'>
         <img  src='iPhone_15_Pro_Blue_Titanium_1_0.jpg'/> 
         </div>
@@ -95,9 +95,8 @@ export default function Home() {
         </div>
       </div>
 
-    <div className="flex flex-wrap  flex-row ">
-      <div className="mt-[-300px] md:mt-0 ml-7   md:w-1/2 h-20 flex justify-center md:justify-start items-center">
-      
+    <div className="flex flex-wrap justify-center md:justify-start  ">
+      <div className="mr-96 mt-40  md:ml-0 md:mt-0">
           <Button onClick={togglePoppup} />
           <Poppup trigger={poppupVisible} setTrigger={setPopuppVisible}>
             <h2 className="titre  text-orange-500">Numéro de Téléphone :</h2>
@@ -108,13 +107,13 @@ export default function Home() {
             <br/><br/>
             <Memory />
             <br/><br/>
-            <button className="text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Suivant</button>
+            <button className=" text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-10 py-10 text-center me-2 mb-2 ">Suivant</button>
           </Poppup>
       </div>
     </div>
  
 
-      <div >
+      <div  >
       <Footer/>
       </div>
     </>
