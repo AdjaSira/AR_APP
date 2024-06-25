@@ -9,6 +9,7 @@ import { color } from 'three/examples/jsm/nodes/Nodes';
 import ColorPicker from '@/components/color';
 import Poppup from '@/components/poppup';
 import style from "../styles/poppup.module.css"
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -17,55 +18,6 @@ export default function Home() {
   const togglePoppup = () => {
     setPopuppVisible(!poppupVisible);
   };
-
-
-
- /* const containerRef = useRef();
-  const [gltfScene, setGltfScene] = useState(null);
-
-  useEffect(() => {
-    
-    const loadGLTFScene = () => {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-    containerRef.current.appendChild(renderer.domElement);
-
-    const loader = new GLTFLoader().setPath('/public/');
-    loader.load('scene.gltf', (gltf) => {
-      const mesh = gltf.scene;
-      scene.add(mesh);
-      mesh.position.set(0, 1.05, -1)
-    }, undefined, function (error) {
-      console.error(error);
-    });
-
-    camera.position.z = 5;
-
-    const animate = function () {
-      requestAnimationFrame(animate);
-
-      if (gltfScene) {
-        gltfScene.rotation.x += 0.01;
-        gltfScene.rotation.y += 0.01;
-      }
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    return () => {
-      // Nettoyage des ressources Three.js lors du démontage du composant
-      renderer.dispose();
-    };
-  };
-
-  // Appeler la fonction de chargement de la scène GLTF
-  loadGLTFScene();
-}, []);*/
-
 
  return (
     <>
@@ -77,11 +29,24 @@ export default function Home() {
 
 
       <div class="grid grid-flow-col grid-rows-2 md:grid-cols-4 gap-8 max-h-[720px]">
-        <div className='md:col-span-3'>
-        <img  src='iPhone_15_Pro_Blue_Titanium_1_0.jpg'/> 
+        <div className='md:col-span-3 relative '>
+        <Image  src={'/video.gif'} width={'1000'} height={'500'} />  
         </div>
-       <div className="md:col-start-4">
-       <div className='text-lg font-bold  mt-20 mr-10'>
+        <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 md:static md:ml-96 md:mt-10 md:bottom-auto'>
+             <button 
+          
+                      className=" border-gray-400 rounded mt-60 "
+                      onClick={() => setPopuppVisible(true)}
+                    >
+                      <span
+                        className=" py-2 px-3 text-gray-900 focus:outline-none text-white bg-orange-400 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2 dark:focus:ring-orange-900 "
+                      >
+                        Précommander
+                      </span>
+                </button>
+       </div>
+       <div className="md:col-start-4 md:mt-0 ">
+       <div className='text-lg font-bold md:mt-10 mr-10'>
        <p>Description</p>
        <br/><br/>
        </div>
@@ -95,9 +60,10 @@ export default function Home() {
         </div>
       </div>
 
-    <div className="flex flex-wrap justify-center md:justify-start  ">
-      <div className="mr-96 mt-40  md:ml-0 md:mt-0">
-          <Button onClick={togglePoppup} />
+      
+
+  <div className="mt-4 md:hidden">
+      
           <Poppup trigger={poppupVisible} setTrigger={setPopuppVisible}>
             <h2 className="titre  text-orange-500">Numéro de Téléphone :</h2>
             <br/>
@@ -107,13 +73,12 @@ export default function Home() {
             <br/><br/>
             <Memory />
             <br/><br/>
-            <button className=" text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-10 py-10 text-center me-2 mb-2 ">Suivant</button>
+            <button className=" text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-5 py-2   text-center me-2 mb-2 ">Suivant</button>
           </Poppup>
-      </div>
-    </div>
+  </div>
  
 
-      <div  >
+      <div className='position-fixed' >
       <Footer/>
       </div>
     </>
