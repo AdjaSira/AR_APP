@@ -1,104 +1,156 @@
-import { useState } from "react";
+// import { createTheme } from "@mui/material";
 import Layout from "../components/layout";
 import MUIDataTable from "mui-datatables";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import ModifierProduit from "../formulaireModification";
-import AjouterProduit from "../formulaireAjout";
+import { Button, Chip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
-// import Button from "@mui/material/Button";
-import { Button, Chip } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useState } from "react";
+import ModifierPrecommande from "../modificationPrecommande";
 
-export default function Produit() {
-  const [products, setProducts] = useState([
-    [
-      "Iphone 15",
-      167,
-      "Smartphone",
-      "John",
-      "2024-06-10",
-      "Alice",
-      "2024-06-11",
-      "Disponible",
-    ],
-    [
-      "Iphone 15 Pro",
-      167,
-      "Smartphone",
-      "Alice",
-      "2024-06-10",
-      "John",
-      "2024-06-11",
-      "En rupture",
-    ],
-    [
-      "Galaxy S24",
-      167,
-      "Smartphone",
-      "John",
-      "2024-06-10",
-      "Alice",
-      "2024-06-11",
-      "En rupture",
-    ],
-    [
-      "Galaxy Z Fold 5",
-      167,
-      "Smartphone",
-      "Alice",
-      "2024-06-10",
-      "John",
-      "2024-06-11",
-      "Disponible",
-    ],
-    [
-      "Galaxy Z-Flip",
-      167,
-      "Smartphone",
-      "John",
-      "2024-06-10",
-      "Alice",
-      "2024-06-11",
-      "Disponible",
-    ],
-  ]);
-
+export default function Precommande() {
   const [editIndex, setEditIndex] = useState(null);
   const [isEditDialogOpen, setEditDialogOpen] = useState(false);
-  const [isAddDialogOpen, setAddDialogOpen] = useState(false);
-
-  const handleDelete = (rowIndex) => {
-    const newProducts = products.filter((product, index) => index !== rowIndex);
-    setProducts(newProducts);
-  };
+  const [precommandes, setPrecommandes] = useState([
+    [
+      "1",
+      "Iphone 15",
+      "Moussa Diouf",
+      "moussa.diouf@gmail.com",
+      "771569867",
+      "2024-06-01",
+      "2024-06-05",
+      "En attente",
+    ],
+    [
+      "2",
+      "Galaxy S24",
+      "Aminata Traoré",
+      "amina2@gmail.com",
+      "778907645",
+      "2024-06-02",
+      "2024-06-06",
+      "Validé",
+    ],
+    [
+      "3",
+      "Galaxy S24",
+      "Sophie Mbaye",
+      "sombaye@gmail.com",
+      "774352323",
+      "2024-06-03",
+      "2024-06-07",
+      "Refusé",
+    ],
+    [
+      "4",
+      "Iphone 15 Pro",
+      "Doudou Ndiaye",
+      "ndiayedoudou@gmail.com",
+      "776548756",
+      "2024-06-04",
+      "2024-06-08",
+      "En validation",
+    ],
+    [
+      "5",
+      "Galaxy Z Fold 5",
+      "Lauriane Faye",
+      "laufaye@gmail.com",
+      "776665898",
+      "2024-06-05",
+      "2024-06-09",
+      "En attente",
+    ],
+    [
+      "6",
+      "Iphone 15 Pro",
+      "Fadel Dioum",
+      "fadeldioum@gmail.com",
+      "779867898",
+      "2024-06-06",
+      "2024-06-10",
+      "Validé",
+    ],
+    [
+      "7",
+      "Galaxy Z-Flip",
+      "Baba Ndiaye",
+      "babsndiaye23@gmail.com",
+      "775674567",
+      "2024-06-07",
+      "2024-06-11",
+      "Refusé",
+    ],
+    [
+      "8",
+      "Galaxy Z Fold 5",
+      "Macodou Gueye",
+      "macodou8@gmail.com",
+      "779806452",
+      "2024-06-08",
+      "2024-06-12",
+      "En validation",
+    ],
+    [
+      "9",
+      "Iphone 15 Pro",
+      "Astou Ndiaye",
+      "ndiayeAsta28@gmail.com",
+      "778899001",
+      "2024-06-09",
+      "2024-06-13",
+      "En attente",
+    ],
+    [
+      "10",
+      "Galaxy Z Fold 5",
+      "Ousmane Mané",
+      "ousmane90@gmail.com",
+      "772345698",
+      "2024-06-10",
+      "2024-06-14",
+      "Validé",
+    ],
+  ]);
 
   const handleEdit = (rowIndex) => {
     setEditIndex(rowIndex);
     setEditDialogOpen(true);
   };
 
-  const handleSave = (updatedProduct) => {
-    const newProducts = products.map((product, index) =>
-      index === editIndex ? updatedProduct : product
+  const handleDelete = (rowIndex) => {
+    const newPrecommandes = precommandes.filter(
+      (precommandes, index) => index !== rowIndex
     );
-    setProducts(newProducts);
+    setPrecommandes(newPrecommandes);
   };
 
-  const handleAdd = (newProduct) => {
-    setProducts([...products, newProduct]);
+  const handleSave = (updatedPrecommande) => {
+    const newPrecommandes = precommandes.map((precommande, index) =>
+      index === editIndex ? updatedPrecommande : precommande
+    );
+    setProducts(newPrecommandes);
   };
 
   //fonction pour faire des tags status sur les status des précommandes
   const renduStatus = (statut) => {
     let color;
     switch (statut) {
-      case "Disponible":
+      case "En attente":
+        color = "default";
+        break;
+
+      case "Validé":
         color = "success";
         break;
-      case "En rupture":
+      case "Refusé":
         color = "error";
+        break;
+      case "En validation":
+        color = "warning";
         break;
       default:
         color = "default";
@@ -108,7 +160,7 @@ export default function Produit() {
 
   const columns = [
     {
-      name: "Nom",
+      name: "ID",
       options: {
         filter: true,
         sort: false,
@@ -116,7 +168,7 @@ export default function Produit() {
       },
     },
     {
-      name: "Quantité",
+      name: "Nom Produit",
       options: {
         filter: true,
         sort: false,
@@ -124,16 +176,7 @@ export default function Produit() {
       },
     },
     {
-      name: "Catégorie",
-      options: {
-        filter: true,
-        sort: false,
-        setCellHeaderProps: () => ({ style: { fontWeight: "bold" } }),
-      },
-    },
-
-    {
-      name: "Ajouté Par",
+      name: "Nom Client",
       options: {
         filter: true,
         sort: false,
@@ -141,7 +184,7 @@ export default function Produit() {
       },
     },
     {
-      name: "Date de l'Ajout",
+      name: "Email Client",
       options: {
         filter: true,
         sort: false,
@@ -149,7 +192,7 @@ export default function Produit() {
       },
     },
     {
-      name: "Modifié Par",
+      name: "Telephone",
       options: {
         filter: true,
         sort: false,
@@ -157,7 +200,15 @@ export default function Produit() {
       },
     },
     {
-      name: "Date de derniere modification",
+      name: "Date de Création",
+      options: {
+        filter: true,
+        sort: false,
+        setCellHeaderProps: () => ({ style: { fontWeight: "bold" } }),
+      },
+    },
+    {
+      name: "Date de Modification",
       options: {
         filter: true,
         sort: false,
@@ -178,10 +229,16 @@ export default function Produit() {
       options: {
         filter: true,
         sort: false,
-        setCellHeaderProps: () => ({ style: { fontWeight: "bold" } }),
         empty: true,
+        setCellHeaderProps: () => ({ style: { fontWeight: "bold" } }),
         customBodyRender: (value, tableMeta, updateValue) => (
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <IconButton
+              sx={{ color: "Blue" }}
+              onClick={() => handleEdit(tableMeta.rowIndex)}
+            >
+              <VisibilityIcon />
+            </IconButton>
             <IconButton
               sx={{ color: "green" }}
               onClick={() => handleEdit(tableMeta.rowIndex)}
@@ -218,37 +275,23 @@ export default function Produit() {
 
   return (
     <Layout>
-      <div className="py-10 min-h-screen grid place-items-center">
-        <div className="w-full max-w-7xl px-4">
+      <div className=" py-10 min-h-screen grid place-items-center">
+        <div className="">
           <ThemeProvider theme={getMuiTheme()}>
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<AddIcon />}
-              onClick={() => setAddDialogOpen(true)}
-              sx={{ mb: 2 }}
-            >
-              Ajouter Produit
-            </Button>
             <MUIDataTable
-              title={"Liste des Produits"}
-              data={products}
+              title={"Liste des Précommandes"}
+              data={precommandes}
               columns={columns}
               options={options}
             />
           </ThemeProvider>
         </div>
       </div>
-      <ModifierProduit
+      <ModifierPrecommande
         open={isEditDialogOpen}
         handleClose={() => setEditDialogOpen(false)}
-        produit={editIndex !== null ? products[editIndex] : []}
+        precommande={editIndex !== null ? precommandes[editIndex] : []}
         handleSave={handleSave}
-      />
-      <AjouterProduit
-        open={isAddDialogOpen}
-        handleClose={() => setAddDialogOpen(false)}
-        handleSave={handleAdd}
       />
     </Layout>
   );

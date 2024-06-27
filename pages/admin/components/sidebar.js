@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FaUserPlus, FaProductHunt } from "react-icons/fa";
-import { MdDashboard, MdComment } from "react-icons/md";
+import { MdDashboard, MdComment, MdLogout } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 
 const menuItems = [
@@ -33,9 +34,9 @@ const menuItems = [
 
 const Sidebar = () => {
   return (
-    <div className="bg-stone-950 w-full md:w-60">
-      <nav>
-        <ul>
+    <div className="bg-stone-950 min-h-screen w-full md:w-60 flex flex-col justify-between">
+      <nav className="flex-grow">
+        <ul className="space-y-2">
           {menuItems.map(({ path, title, icon }) => (
             <li className="m-2" key={title}>
               <Link

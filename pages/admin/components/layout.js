@@ -1,7 +1,7 @@
 import Sidebar from "./sidebar";
 import Header from "./header";
 
-export default function Layout({ children, title }) {
+export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header className="bg-purple-200 sticky top-0 h-14 flex justify-center items-center font-semibold uppercase" />
