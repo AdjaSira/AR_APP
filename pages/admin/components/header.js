@@ -11,10 +11,10 @@ const Header = () => {
           alt="Avatar"
           className="rounded-full"
         />
-        <h1 className="ml-4 text-xl">Admin's dashboard</h1>
+        <h1 className="ml-4 text-xl">Admin&apos;s dashboard</h1>
       </div>
       <nav>
-        {/* Ajoutez ici d'autres éléments de navigation si nécessaire */}
+  
       </nav>
     </header>
   );

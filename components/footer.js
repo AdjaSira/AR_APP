@@ -8,24 +8,27 @@ const Footer =  () => {
     return(
  
         <footer className="w-full bg-black">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ml-0 md:ml-40 py-10">
-            <div className="text-white font-bold mt-10 flex items-start mr-10">
-              <IconName className="w-20 h-20 mr-2" icon="RiCustomerService2Fill" /> Contacter Orange
+        <div className="container mx-auto h-full">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="ml-10 text-white font-bold mt-10 flex items-center mr-10">
+              <IconName className="w-8 h-8 " icon="RiCustomerService2Fill" />
+              <span className="ml-2">Contacter Orange</span> 
             </div>
-            <div className="text-white font-bold mt-10 flex items-start mr-10">
-              <IconName icon="MdOutlineWhereToVote" /> Agences
+            <div className="text-white font-bold mt-10  flex items-center justify-center mr-12">
+              <IconName  className="w-8 h-8 mx-4  " icon="MdOutlineWhereToVote"  />
+              <span className="ml-2">Agence</span> 
             </div>
-            <div className="text-white font-bold mt-10 flex items-start mr-10">
-              <IconName icon="FaShop" /> Boutique
+            <div className="text-white font-bold mt-10 ml-12 flex items-center ">
+              <IconName  className="w-8 h-8 mr-4" icon="FaShop" />
+              <span className="ml-4"> Boutique</span> 
             </div>
-            <div className="text-white font-bold mt-10 flex items-start">
-              Retrouvez nous sur :
-              <IconName icon="FaFacebook" /> 
-              <IconName icon="FaInstagram" />
-              <IconName icon="FaTwitter" /> 
-              <IconName icon="CiLinkedin" /> 
-              <IconName icon="FaGooglePlusG" />
+            <div className="text-white font-bold mt-10 flex items-center">
+              RetrouvezNous:
+              <span className="ml-2" ><IconName icon="FaFacebook" /></span>  
+              <span className="ml-2" ><IconName icon="FaInstagram" /></span> 
+              <span className="ml-2" ><IconName icon="FaTwitter" /></span>
+              <span className="ml-2" ><IconName icon="CiLinkedin" /></span> 
+              <span className="ml-2" ><IconName icon="FaGooglePlusG" /></span> 
             </div>
           </div>
       
@@ -34,7 +37,7 @@ const Footer =  () => {
           <div className="w-full max-w-screen-xl mx-auto py-6 lg:py-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 px-4">
               <div>
-                <h2 className="mb-6 text-sm font-bold text-white uppercase">Offres Mobiles</h2>
+                <h2 className="mb-6  font-bold text-white uppercase">Offres Mobiles</h2>
                 <ul className="text-white font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">Pass Internet</a>
@@ -49,7 +52,7 @@ const Footer =  () => {
                     <a href="#" className="hover:text-orange-500">Offres Family</a>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:text-orange-500">Roaming et Tarifs vers l'international</a>
+                    <a href="#" className="hover:text-orange-500">Roaming et Tarifs vers l&apos;international</a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">Domino 4G</a>
@@ -63,7 +66,7 @@ const Footer =  () => {
                     <a href="#" className="hover:text-orange-500">Gamme Box</a>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:text-orange-500">La Tv d'orange</a>
+                    <a href="#" className="hover:text-orange-500">La Tv d&apos;orange</a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">5G</a>
@@ -74,7 +77,7 @@ const Footer =  () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-white font-bold">Boutique en Ligne</h2>
+                <h2 className="mb-6 text-white font-bold">BOUTIQUE EN LIGNE</h2>
                 <ul className="text-white font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">Accessoires</a>
@@ -97,13 +100,13 @@ const Footer =  () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-white font-bold">Orange et Vous</h2>
+                <h2 className="mb-6 text-white font-bold">ORANGE ET VOUS</h2>
                 <ul className="text-white font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">Les Codes USSD à Connaitre</a>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:text-orange-500">Orange S'engage</a>
+                    <a href="#" className="hover:text-orange-500">Orange S&apos;engage</a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">Portail Magique</a>
@@ -129,7 +132,7 @@ const Footer =  () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-white font-bold">Informations Légales</h2>
+                <h2 className="mb-6 text-white font-bold">INFORMATIONS LEGALES</h2>
                 <ul className="text-white font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">Politique de Confidentialité</a>
@@ -138,7 +141,7 @@ const Footer =  () => {
                     <a href="#" className="hover:text-orange-500">Conditions Générales de la Vente</a>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:text-orange-500">Conditions Générales d'utilisation</a>
+                    <a href="#" className="hover:text-orange-500">Conditions Générales d&apos;utilisation</a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:text-orange-500">CGU Maxit</a>
@@ -177,21 +180,23 @@ const Footer =  () => {
       
           <hr className="mt-10 w-3/4 mx-auto" />
       
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto mt-6">
-          <div className="flex mt-10 justify-center">
-        <div className="text-orange-500 mr-4">Particuliers</div>
-        <div className="text-white mr-4 hover:text-orange">Professionnels</div>
-        <div className="text-white hover:text-orange">Entreprises</div>
-      </div> 
-      <div className="flex mt-10 justify-center">
-        <div className="text-white mr-4">Orange 2021</div>
-        <div className="text-white mr-4 hover:text-orange">Kiréne avec Orange</div>
-        <div className="text-white hover:text-orange mr-4">Sonatel</div>
-        <div className="text-white hover:text-orange mr-4">Couverture Réseau</div>
-        <div className="text-white hover:text-orange">Orange.com</div>
-      </div> 
-    </div>
-  </div>
+<div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto mt-6">
+          <div className="flex mt-10 justify-center mr-40 mb-10">
+            <div className="text-orange-500 mr-4 cursor-pointer">Particuliers</div>
+            <div className="text-white mr-4 hover:text-orange  cursor-pointer">Professionnels</div>
+            <div className="text-white hover:text-orange cursor-pointer">Entreprises</div>
+          </div> 
+          <div className="flex mt-10 justify-center mr-10">
+            <div className="text-white mr-4 cursor-pointer">Orange 2021</div>
+            <div className="text-white mr-4 hover:text-orange cursor-pointer">Kiréne avec Orange</div>
+            <div className="text-white hover:text-orange mr-4 cursor-pointer">Sonatel</div>
+            <div className="text-white hover:text-orange mr-4 cursor-pointer">Couverture Réseau</div>
+            <div className="text-white hover:text-orange cursor-pointer">Orange.com</div>
+          </div> 
+</div>
+
+
+</div>
 </footer>
 
       
