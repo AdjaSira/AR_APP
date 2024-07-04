@@ -7,7 +7,7 @@ import IconName from "./iconeName";
 const Footer =  () => {
     return(
  
-        <footer className="w-full bg-black">
+        <footer className="w-full bg-black mt-10">
         <div className="container mx-auto h-full">
           <div className="grid grid-cols-4 gap-2">
             <div className="ml-10 text-white font-bold mt-10 flex items-center mr-10">

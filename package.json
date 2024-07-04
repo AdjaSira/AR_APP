@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "bundle": "webpack"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
@@ -19,7 +20,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "swiper": "^11.1.4",
     "three": "^0.165.0"
+    
   },
   "devDependencies": {
     "eslint": "^8",

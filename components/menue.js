@@ -2,19 +2,14 @@ import React, { useState } from "react";
 import { Navbar } from "flowbite-react";
 
 
-const Menue = () => {
+const Menue = (currentImage,setCurrentImage, imageChange) => {
   const [isFormVisible, setFormVisible] = useState(false);
 
   const handleToggle = () => {
     setFormVisible(!isFormVisible);
   };
 
-  const [currentImage,setCurrentImage] = useState("/iPhone_15_Pro_Blue_Titanium_1_0.jpg");
-  const imageChange = (newImage) => {
-    setCurrentImage(newImage);
-  };
-
-
+  
 
 
   return (
@@ -34,10 +29,10 @@ const Menue = () => {
           <Navbar.Link href="/navbars" active={true}>
             Home
           </Navbar.Link>
-          <Navbar.Link href="#"  onClick={() => imageChange("/téléchargement (2).jpeg") }>iPhone 15</Navbar.Link>
-          <Navbar.Link href="#"  onClick={() => imageChange("/iPhone_15_Pro_Blue_Titanium_1_0.jpg") } >iPad Pro Max</Navbar.Link>
-          <Navbar.Link href="#"  onClick={() => imageChange("/") } >Galaxy Z Fold</Navbar.Link>
-          <Navbar.Link href="#"  onClick={() => imageChange("/") }>Galaxy Z Flip</Navbar.Link>
+          <Navbar.Link href="#" >iPhone 15</Navbar.Link>
+          <Navbar.Link href="#"  >iPad Pro Max</Navbar.Link>
+          <Navbar.Link href="#"  >Galaxy Z Fold</Navbar.Link>
+          <Navbar.Link href="#"  >Galaxy Z Flip</Navbar.Link>
         </Navbar.Collapse>
         <div className="block sm:hidden ml-auto">
           <Navbar.Toggle />
@@ -65,8 +60,8 @@ const Menue = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-900"
-            >
+                className="w-full py-2 px-4 bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-900"
+              >
               Suivant
             </button>
           </form>
