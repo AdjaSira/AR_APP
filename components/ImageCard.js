@@ -11,6 +11,16 @@ export default function ImageCard({src, title, description}) {
     setPoppupVisible(!poppupVisible);
   };
 
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState('');
+  const [telephone, setTelephone] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Vous pouvez ajouter une logique supplémentaire ici si nécessaire
+    alert('Formulaire soumis avec succès !');
+  };
+
 
   return (
     <div>
@@ -30,30 +40,33 @@ export default function ImageCard({src, title, description}) {
     {poppupVisible && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
           <Poppup trigger={poppupVisible} setTrigger={setPoppupVisible}>
-             <h2 className="text-orange-500">Nom :</h2>
-                 <input className="border border-orange-300" type="text" placeholder="Nom..." />
+          <h1 className="text-orange-500 font-bold">Date de Précommande : Du 1er au 25 Aout</h1>
+          <form onSubmit={handleSubmit}>
+          <h2 className="text-orange-500">Nom :</h2>
+                 <input required pattern='[a-zA-Z]+' className="border border-orange-300" type="text" placeholder="Nom..." onChange={(e) => setNom(e.target.value)} />
                  <br /><br />
                  <h2 className="text-orange-500">Prénom :</h2>  
-                 <input className="border border-orange-300" type="text" placeholder="Prénom..." />
+                 <input required pattern='[a-zA-Z]+' className="border border-orange-300" type="text" placeholder="Prénom..." onChange={(e) => setNom(e.target.value)}/>
                  <br /><br />
                  <h2 className="text-orange-500">Numéro de Télèphone :</h2>
-                 <input className="border border-orange-300" type="text" placeholder="Numéro..." />
+                 <input required pattern='[0-9]{9}' className="border border-orange-300" type="text" placeholder="Numéro..." onChange={(e) => setNom(e.target.value)} />
                  <br /><br />
                  <ColorPicker />
                  <br /><br />
                  <Memory />
                  <br /><br />
-                 <h2 className="text-orange-500">Choisissez votre option de paiement :</h2>
+                 {/* <h2 className="text-orange-500">Choisissez votre option de paiement :</h2>
                  <input type='radio' name='paiement' id='tontine' /> 
                  <label htmlFor='tontine' className="ml-2 text-gray-700">Tontine</label>
                    <br/>
                  <input type='radio' name='paiement' id='paiement-unique' /> 
                  <label htmlFor='paiement-unique' className="ml-2 text-gray-700">Paiement en une fois</label>
-                 <br /><br />
-                 <button className="text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2">
-                   Suivant
+                 <br /><br /> */}
+                 <button type='submit' className="text-white bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2">
+                   Soumettre
                  </button>
-          </Poppup>
+          </form>
+           </Poppup>
         </div>
       )}
 

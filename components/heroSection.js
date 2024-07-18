@@ -3,14 +3,19 @@ import ImageCard from './ImageCard';
 import Poppup from './poppup';
 import ColorPicker from './color';
 import Memory from './memory';
+import Link from 'next/link';
 
-export default function HeroSection({ src, title, description }) {
+export default function HeroSection({ src, title, description, title1 }) {
   
   return (
     <div className="relative">
        <div className="relative ">
        <div className="w-full h-96">
-        <ImageCard src={src} title={title} description={description} />
+       <Link href="/products">
+      
+          <ImageCard src={src} title={title} description={description} title1={title1} />
+       
+      </Link>
        </div>
      </div>
 

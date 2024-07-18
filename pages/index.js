@@ -13,6 +13,7 @@ import style from "../styles/swipper.module.css"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Mdstyle from "../components/phonecard"
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -28,20 +29,56 @@ export default function Home() {
         <Menue />
       </div>
 
-      <div className="w-full h-full">
+    
+      <div className="w-full h-full ">
       <Swiper navigation={true} modules={[Navigation]} >
-        <SwiperSlide><HeroSection unoptimized src={"/video.gif"}  title={"Iphone 15 Pro Max"} description={"Decouvrez le nouveau Iphone 15 Pro Max "}  togglePoppup={togglePoppup}/></SwiperSlide>
-        <SwiperSlide><HeroSection unoptimized src={"/ipad.gif"}   title={"Ipad Pro 20"}       description={"Venez découvrir le Nouvel Ipad Pro 2020"} togglePoppup={togglePoppup}/></SwiperSlide>
+        <SwiperSlide><HeroSection unoptimized src={"/video.gif"}  title={"Iphone 15 Pro Max"} description={"Decouvrez le nouveau Iphone 15 Pro Max "}        togglePoppup={togglePoppup}/></SwiperSlide>
+        <SwiperSlide><HeroSection unoptimized src={"/ipad.gif"}   title={"Ipad Pro 20"}       description={"Venez découvrir le Nouvel Ipad Pro 2020"}        togglePoppup={togglePoppup}/></SwiperSlide>
         <SwiperSlide><HeroSection unoptimized src={"/zfoldd.gif"} title={"Galazy Z Fold 5"}   description={"Entrez dans l'ére de l'IA Avec le galazy Zfold"} togglePoppup={togglePoppup}/></SwiperSlide>
       </Swiper>
       </div>
 
-      <div className="flex mt-10">
-        <Phonecard src={"/iPhone_15_Pro_Blue_Titanium_1_0.jpg" } title={"Iphone 15 Pro"} description={"628 000 CFA"} price={"532 000"}  />
-        <Phonecard src={"/téléchargement (3).jpeg" } title={"Galaxy Z Fold"} description={"725 000 CFA"} price={"935 000"}  />
-        <Phonecard src={"/téléchargement.jpeg" } title={"Galaxy Z Flip"} description={"800 000 CFA"} price={"1 000 000"}  />
-        <Phonecard src={"/ipad.jpeg" } title={"Ipad Pro"} description={"500 000 CFA"} price={"800 000"}  />
-       
+      <div className="flex mt-10 space-x-4">
+      <Link href="/products/iphone-15" >
+          <div>
+            <Phonecard 
+              src="/iPhone_15_Pro_Blue_Titanium_1_0.jpg" 
+              title="Iphone 15 Pro" 
+              description="628 000 CFA" 
+              price="532 000" 
+            />
+          </div>
+        </Link>
+        <Link href="/products/galaxy-z-fold" >
+          <div>
+            <Phonecard 
+              src="/téléchargement (3).jpeg" 
+              title="Galaxy Z Fold" 
+              description="725 000 CFA" 
+              price="935 000" 
+            />
+          </div>
+        </Link>
+        <Link href="/products/galaxy-z-flip" >
+          <div>
+            <Phonecard 
+              src="/téléchargement.jpeg" 
+              title="Galaxy Z Flip" 
+              description="800 000 CFA" 
+              price="1 000 000" 
+            />
+          </div>
+        </Link>
+        <Link href="/products/ipad-pro" >
+          <div>
+            <Phonecard 
+              src="/ipad.jpeg" 
+              title="Ipad Pro" 
+              description="500 000 CFA" 
+              price="800 000" 
+            />
+          </div>
+        </Link>
       </div>
 
       
