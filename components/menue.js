@@ -29,17 +29,17 @@ const Menue = (currentImage,setCurrentImage, imageChange) => {
           <Navbar.Link href="/navbars" active={true}>
             Home
           </Navbar.Link>
-          <Navbar.Link href="#" >iPhone 15</Navbar.Link>
-          <Navbar.Link href="#"  >iPad Pro Max</Navbar.Link>
-          <Navbar.Link href="#"  >Galaxy Z Fold</Navbar.Link>
-          <Navbar.Link href="#"  >Galaxy Z Flip</Navbar.Link>
+          <Navbar.Link href="#iphone-15" >iPhone 15</Navbar.Link>
+          <Navbar.Link href="#ipad-pro"  >iPad Pro Max</Navbar.Link>
+          <Navbar.Link href="#galaxy-z-fold">Galaxy Z Fold</Navbar.Link>
+          <Navbar.Link href="#galaxy-z-flip">Galaxy Z Flip</Navbar.Link>
         </Navbar.Collapse>
         <div className="block sm:hidden ml-auto">
           <Navbar.Toggle />
         </div>
       </Navbar>
       <div
-        className="mt-2 ml-96 py-2 px-2 text-gray-900 focus:outline-none text-white bg-orange-400 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2 dark:focus:ring-orange-900"
+        className=" ml-60 py-2 px-2 text-gray-900 focus:outline-none text-white bg-orange-400 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2 dark:focus:ring-orange-900"
       >
         <button onClick={handleToggle}>Suivre Précommande</button>
        

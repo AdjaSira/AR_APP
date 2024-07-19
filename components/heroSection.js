@@ -11,11 +11,7 @@ export default function HeroSection({ src, title, description, title1 }) {
     <div className="relative">
        <div className="relative ">
        <div className="w-full h-96">
-       <Link href="/products">
-      
           <ImageCard src={src} title={title} description={description} title1={title1} />
-       
-      </Link>
        </div>
      </div>
 
